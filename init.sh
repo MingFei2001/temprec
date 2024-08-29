@@ -2,14 +2,14 @@
 
 # Define color code
 declare -r WARNING='\033[0;33m'
-# declare -r ERROR='\033[0;31m'
 declare -r NC='\033[0m'
 
 # install sensors tools
 sudo apt install lm-sensors
 
 # Detect the sensors
-printf "${WARNING} [WARNING] Accept all default if no changes are needed.${NC}\n"
+printf "${WARNING} [WARNING] Setting up the sensors.${NC}\n"
+printf "${WARNING} [WARNING] Accept all default if no changes.${NC}\n"
 sudo sensors-detect
 
 # Preparing the virtual env
@@ -18,5 +18,16 @@ source venv/bin/activate
 pip install pandas
 
 # Run the python script
-python ./rectemp.py
-less ./cpu_temp_log.csv
+printf "${WARNING} [WARNING] The recording starts now.${NC}\n"
+python ./temprec.py
+
+# Ask to view the data
+read -p "Do you want to view the collected data? (y/n) " yn
+case $yn in
+	[Yy]* )
+		less ./cpu_temp_log.csv;;
+	[Nn]* )
+		printf "exiting ... \n";;
+	*)
+		printf "exiting ... \n";;
+esac
