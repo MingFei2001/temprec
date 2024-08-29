@@ -37,6 +37,11 @@ python3 ./temprec.py
 ```
 2. The script will run and log temperatures. Press Ctrl+C to stop logging.
 3. After stopping, you'll be prompted if you want to view the collected data.
+4. To exit the virtual environment
+```bash
+# enter the following in the terminal
+deactivate
+```
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
