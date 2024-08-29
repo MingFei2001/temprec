@@ -8,8 +8,8 @@ declare -r NC='\033[0m'
 sudo apt install lm-sensors
 
 # Detect the sensors
-printf "${WARNING} [WARNING] Setting up the sensors.${NC}\n"
-printf "${WARNING} [WARNING] Accept all default if no changes.${NC}\n"
+printf "${WARNING}[WARNING] Setting up the sensors.${NC}\n"
+printf "${WARNING}[WARNING] Accept all default if no changes.${NC}\n"
 sudo sensors-detect
 
 # Preparing the virtual env
@@ -22,7 +22,7 @@ printf "${WARNING} [WARNING] The recording starts now.${NC}\n"
 python ./temprec.py
 
 # Ask to view the data
-read -p "Do you want to view the collected data? (y/n) " yn
+read -p "Do you want to view the collected data? (y/n)" yn
 case $yn in
 	[Yy]* )
 		less ./cpu_temp_log.csv;;
