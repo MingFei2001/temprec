@@ -37,3 +37,6 @@ python3 ./temprec.py
 ```
 2. The script will run and log temperatures. Press Ctrl+C to stop logging.
 3. After stopping, you'll be prompted if you want to view the collected data.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
