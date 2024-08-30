@@ -24,7 +24,7 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-csv_file = open("cpu_temp_log.csv", mode="w", newline="")
+csv_file = open("cpu_temp_log.csv", mode="a", newline="")
 csv_writer = csv.writer(csv_file)
 
 csv_writer.writerow(["Time (s)", "Temperature (°C)"])
