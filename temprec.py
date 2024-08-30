@@ -1,3 +1,13 @@
+# ------------------------------------------
+#  _____                    ____
+# |_   _|__ _ __ ___  _ __ |  _ \ ___  ___
+#   | |/ _ \ '_ ` _ \| '_ \| |_) / _ \/ __|
+#   | |  __/ | | | | | |_) |  _ <  __/ (__
+#   |_|\___|_| |_| |_| .__/|_| \_\___|\___|
+#                    |_|
+# ------------------------------------------
+
+# Importing libraries used
 import os
 import time
 import signal
@@ -22,15 +32,16 @@ def signal_handler(sig, frame):
         csv_file.close()
     exit(0)
 
+# Handling Termination Signal
 signal.signal(signal.SIGINT, signal_handler)
 
+# Write to csv file as log
 csv_file = open("cpu_temp_log.csv", mode="a", newline="")
 csv_writer = csv.writer(csv_file)
-
 csv_writer.writerow(["Time (s)", "Temperature (°C)"])
-print("Recording CPU Temperature. Press Ctrl+C to stop")
 
 # Main Loop
+print("Recording CPU Temperature. Press Ctrl+C to stop")
 start_time = time.time()
 while True:
     try:
